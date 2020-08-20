@@ -25,9 +25,13 @@ def main(argv):
     for n in range(n):
         password = ""
         for i in range(num):
+            cap = random.randrange(0,num)
             idx = random.randrange(0,len(list))
-            password += list[idx]
-            if i != num-1:
+            if random.choice([True, False]) or cap == i:
+                password += list[idx].capitalize()
+            else:
+                password += list[idx]
+            if i != num-1 or num == 1:
                 number = random.randrange(100,1000)
                 password += str(number)
         password += random.choice(symbols)
