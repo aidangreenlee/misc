@@ -27,6 +27,8 @@ def main(argv):
         for i in range(num):
             cap = random.randrange(0,num)
             idx = random.randrange(0,len(list))
+            while len(list[idx]) > 7 or len(list[idx]) < 4:
+                idx+=1
             if random.choice([True, False]) or cap == i:
                 password += list[idx].capitalize()
             else:
